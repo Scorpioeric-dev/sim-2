@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Wizard from "./components/Wizard/Wizard";
-import DashBoard from "./components/DashBoard/Dashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 export default (
   <Switch>
-    <Route exact path="/" component={DashBoard} />
+    <Route exact path="/" component={Dashboard} />
     <Route path="/Wizard" component={Wizard} />
   </Switch>
 );
