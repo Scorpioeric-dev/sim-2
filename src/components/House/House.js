@@ -10,13 +10,13 @@ export default class House extends Component {
         console.log(this.props.ele)
         return (
             <div>
-               <h1>{this.props.ele.name}</h1> 
-               <h1>{this.props.ele.address}</h1> 
-               <h1>{this.props.ele.state}</h1> 
-               <h1>{this.props.ele.city}</h1> 
-               <h1>{this.props.ele.zipcode}</h1>
-               <h1>{this.props.ele.rentAmount}</h1>
-               <h1>{this.props.ele.mortgage}</h1>
+               <h1>Name:{this.props.ele.name}</h1> 
+               <h1>Address:{this.props.ele.address}</h1> 
+               <h1>State:{this.props.ele.state}</h1> 
+               <h1>City:{this.props.ele.city}</h1> 
+               <h1>Zip:{this.props.ele.zip}</h1>
+               <h1>Rent Amount:{this.props.ele.rent_amount}</h1>
+               <h1>Mortgage:{this.props.ele.mortgage}</h1>
                <img src={this.props.ele.img} alt=""/> 
                <button onClick={(id) => this.props.remove(this.props.ele.id)}>Delete</button>
                </div>

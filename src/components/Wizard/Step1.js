@@ -5,9 +5,8 @@ import store, {
   UPDATE_ADDRESS,
   UPDATE_CITY,
   UPDATE_STATE,
-  UPDATE_ZIPCODE
+  UPDATE_ZIP
 } from "../../store";
-import axios from 'axios'
 
 export default class Step1 extends Component {
   constructor() {
@@ -18,7 +17,7 @@ export default class Step1 extends Component {
       address: reduxState.address,
       city: reduxState.city,
       state: reduxState.state,
-      zipcode: reduxState.zipcode
+      zip: reduxState.zip
     };
   }
 //how do I add subscribe in here
@@ -56,11 +55,11 @@ export default class Step1 extends Component {
     });
     store.dispatch({
       type: UPDATE_STATE,
-      payload: this.state.dispatch
+      payload: this.state.state
     });
     store.dispatch({
-      type: UPDATE_ZIPCODE,
-      payload: this.state.zipcode
+      type: UPDATE_ZIP,
+      payload: this.state.zip
     });
   };
 
@@ -93,9 +92,9 @@ export default class Step1 extends Component {
             onChange={e => this.handleChange(e)}
           />
           <input
-            placeholder="zipcode"
+            placeholder="zip"
             type="text"
-            name="zipcode"
+            name="zip"
             onChange={e => this.handleChange(e)}
           />
           </form>
