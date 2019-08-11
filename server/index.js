@@ -15,6 +15,6 @@ massive(CONNECTION_STRING).then(dbInstance => {
 });
 
 //endpoints
-app.get('/api/houses')
+app.get('/api/houses',ctrl.getAllHouses)
 app.post('/api/houses',ctrl.addToHouses)
 app.delete('/api/houses/:id',ctrl.deleteHouses)

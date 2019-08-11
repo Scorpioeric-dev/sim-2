@@ -5,11 +5,14 @@ import axios from "axios";
 
 //initial state
 export default class Dashboard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       houses: []
     };
+
+
+    this.deleteHouses = this.deleteHouses.bind(this)
   }
 
   componentDidMount() {
@@ -28,6 +31,15 @@ export default class Dashboard extends Component {
     });
   }
 
+  deleteHouses(id){
+    // console.log('any')
+    axios.delete(`/api/houses/${id}`).then(res => {
+      this.setState({
+        houses:res.data
+      })
+    })
+  }
+
 
 
 
@@ -36,14 +48,14 @@ export default class Dashboard extends Component {
     {
       var allHouses = this.state.houses.map(ele => (
         <div key={ele.id}>
-          <House ele={ele} />
+          <House ele={ele} remove={this.deleteHouses} />
         </div>
       ));
     }
     return (
       <div>
         <h1>DashBoard</h1>
-        <Link to="/wizard">
+        <Link to="/wizard/step1">
           <button>Add New Property</button>
         </Link>
         {allHouses}
