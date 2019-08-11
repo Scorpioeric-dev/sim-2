@@ -8,7 +8,8 @@ const initialState = {
   state: "",
   zipcode: "",
   img: "",
-  rentAmount: ""
+  rentAmount: "",
+  mortgage: ""
 };
 
 //action constant
@@ -21,6 +22,7 @@ export const UPDATE_ZIPCODE = "UPDATE_ZIPCODE";
 export const UPDATE_IMG = "UPDATE_IMG";
 export const UPDATE_RENT_AMOUNT = "UPDATE_RENT_AMOUNT";
 export const UPDATE_MORTGAGE = "UPDATE_MORTGAGE";
+export const CANCEL = "CANCEL"
 
 //reducer
 function reducer(state = initialState, action) {
@@ -43,6 +45,8 @@ function reducer(state = initialState, action) {
       return { ...state, rentAmount: payload };
     case UPDATE_MORTGAGE:
       return { ...state, mortgage: payload };
+      case CANCEL:
+        return {initialState}
     default:
       return state;
   }

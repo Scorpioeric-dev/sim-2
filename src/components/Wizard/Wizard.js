@@ -4,6 +4,7 @@ import axios from "axios";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import store,{CANCEL} from "../../store";
 
 export default class Wizard extends Component {
   constructor() {
@@ -22,12 +23,16 @@ export default class Wizard extends Component {
       [e.target.name]: e.target.value
     });
   };
+  submit = () => {
+    store.dispatch({
+      type: CANCEL
+    });
+  };
 
   render() {
     return (
       <div>
-      <input onChange={e => this.handleChange(e)}/>
-        <Link to="/dashboard">
+        <Link to="/">
           <button onClick={this.submit}>Cancel</button>
         </Link>
         <Switch>

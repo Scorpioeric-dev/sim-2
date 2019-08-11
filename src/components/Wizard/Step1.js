@@ -44,23 +44,23 @@ export default class Step1 extends Component {
   step1 = () => {
     store.dispatch({
       type: UPDATE_NAME,
-      payload: this.state
+      payload: this.state.name
     });
     store.dispatch({
       type: UPDATE_ADDRESS,
-      payload: this.state
+      payload: this.state.address
     });
     store.dispatch({
       type: UPDATE_CITY,
-      payload: this.state
+      payload: this.state.city
     });
     store.dispatch({
       type: UPDATE_STATE,
-      payload: this.state
+      payload: this.state.dispatch
     });
     store.dispatch({
       type: UPDATE_ZIPCODE,
-      payload: this.state
+      payload: this.state.zipcode
     });
   };
 
@@ -99,7 +99,6 @@ export default class Step1 extends Component {
             onChange={e => this.handleChange(e)}
           />
           </form>
-        <input onChange={e => this.handleChange(e)} />
         <Link to="/wizard/step2">
           <button onClick={this.step1}>Next Step</button>
         </Link>

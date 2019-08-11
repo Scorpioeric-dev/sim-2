@@ -7,7 +7,12 @@ state VARCHAR(500),
 zip INTEGER
 );
 
-INSERT INTO houses (name,address,city,state,zip)
-VALUES('Eric', '123 Mine Rd', 'Pleasant Grove', 'UT', 84320),
-('Alix', '321 Marla St', 'Eagle Mountain', 'UT', 84320),
-('Andrew', '12 Roman ln', 'Denver', 'CA', 80014);
+ALTER TABLE houses
+ADD img VARCHAR(5000),
+ADD rent_amount INT,
+ADD mortgage INT;
+-- 
+
+INSERT INTO houses(name,address,city,state,zip,img,rent_amount,mortgage)
+VALUES('Eric','123 BAller ln.','PG','CALIFORNIA',90210,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQbCEixyB9PWiVIP_s_DBqWnKobc88AjoPTsXsJNczQjESjraDcg',2222,5555);
+

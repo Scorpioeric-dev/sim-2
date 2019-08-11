@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import store, { UPDATE_IMG } from "../../store";
 
 export default class Step2 extends Component {
-  state = {
-    img: ""
-  };
+  constructor(){
+    super()
+    const reduxState = store.getState()
+    this.state = {
+      img: reduxState.img
+    };
+  }
   //work on showing an image of the houses themselves and the overall
   //functionality of delete and post of image [to see houses]
   handleChange = e => {
@@ -14,10 +18,10 @@ export default class Step2 extends Component {
     });
   };
 
-  submit = () => {
+  step2 = () => {
     store.dispatch({
       type: UPDATE_IMG,
-      payload: this.state
+      payload: this.state.img
     });
   };
 
@@ -31,7 +35,7 @@ export default class Step2 extends Component {
           onChange={e => this.handleChange(e)}
         />
         <Link to="/wizard/step3">
-          <button>Next Step</button>
+          <button onClick={this.step2}>Next Step</button>
         </Link>
         <Link to="/wizard/step1">
           <button>Back</button>
